@@ -1,0 +1,281 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Event Planner API",
+    "description": "You can see how to add venues and events for your location city.",
+    "version": "1.0.0"
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Events",
+      "description": "Operations for Events"
+    },
+    {
+      "name": "Venues",
+      "description": "Operations for Venues"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/events/": {
+      "get": {
+        "tags": ["Events"],
+        "description": "Gets all the planned events.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Events"],
+        "description": "Creates an event",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "time": {
+                  "example": "any"
+                },
+                "date": {
+                  "example": "any"
+                },
+                "venueID": {
+                  "example": "any"
+                },
+                "ageGroup": {
+                  "example": "any"
+                },
+                "food": {
+                  "example": "any"
+                },
+                "sponsor": {
+                  "example": "any"
+                },
+                "theme": {
+                  "example": "any"
+                },
+                "cause": {
+                  "example": "any"
+                },
+                "eventPlanner": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/events/{id}": {
+      "put": {
+        "tags": ["Events"],
+        "description": "Update the information in for an event using ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "time": {
+                  "example": "any"
+                },
+                "date": {
+                  "example": "any"
+                },
+                "venueID": {
+                  "example": "any"
+                },
+                "ageGroup": {
+                  "example": "any"
+                },
+                "food": {
+                  "example": "any"
+                },
+                "sponsor": {
+                  "example": "any"
+                },
+                "theme": {
+                  "example": "any"
+                },
+                "cause": {
+                  "example": "any"
+                },
+                "eventPlanner": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Events"],
+        "description": "Deletes an event using ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/venues/": {
+      "get": {
+        "tags": ["Venues"],
+        "description": "Gets all Venues",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Venues"],
+        "description": "Creates a venue",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "address": {
+                  "example": "any"
+                },
+                "locationName": {
+                  "example": "any"
+                },
+                "capacity": {
+                  "example": "any"
+                },
+                "indoor": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/venues/{id}": {
+      "put": {
+        "tags": ["Venues"],
+        "description": "Updates a venue using ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "address": {
+                  "example": "any"
+                },
+                "locationName": {
+                  "example": "any"
+                },
+                "capacity": {
+                  "example": "any"
+                },
+                "indoor": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Venues"],
+        "description": "Deletes a venue using ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}

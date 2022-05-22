@@ -18,3 +18,13 @@ Content-Type: application/json
     "cause": "API test",
     "eventPlanner": "Dr test"
 }
+###
+PUT http://localhost:8080/venues/62896a701617555152a9dc70 HTTP/1.1
+Content-Type: application/json
+
+{
+    "address": "123 City Road",
+    "locationName": "City Park",
+    "capacity": 400,
+    "indoor": false
+}
