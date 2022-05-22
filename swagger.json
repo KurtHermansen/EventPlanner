@@ -46,31 +46,31 @@
               "type": "object",
               "properties": {
                 "time": {
-                  "example": "any"
+                  "example": "10:00PM"
                 },
                 "date": {
-                  "example": "any"
+                  "example": "01/01/22"
                 },
                 "venueID": {
-                  "example": "any"
+                  "example": "venueID"
                 },
                 "ageGroup": {
-                  "example": "any"
+                  "example": "Family"
                 },
                 "food": {
-                  "example": "any"
+                  "example": "food"
                 },
                 "sponsor": {
-                  "example": "any"
+                  "example": "Sponsor"
                 },
                 "theme": {
-                  "example": "any"
+                  "example": "theme"
                 },
                 "cause": {
-                  "example": "any"
+                  "example": "cause"
                 },
                 "eventPlanner": {
-                  "example": "any"
+                  "example": "name"
                 }
               }
             }
@@ -104,32 +104,32 @@
               "type": "object",
               "properties": {
                 "time": {
-                  "example": "any"
-                },
-                "date": {
-                  "example": "any"
-                },
-                "venueID": {
-                  "example": "any"
-                },
-                "ageGroup": {
-                  "example": "any"
-                },
-                "food": {
-                  "example": "any"
-                },
-                "sponsor": {
-                  "example": "any"
-                },
-                "theme": {
-                  "example": "any"
-                },
-                "cause": {
-                  "example": "any"
-                },
-                "eventPlanner": {
-                  "example": "any"
-                }
+                    "example": "10:00PM"
+                  },
+                  "date": {
+                    "example": "01/01/22"
+                  },
+                  "venueID": {
+                    "example": "venueID"
+                  },
+                  "ageGroup": {
+                    "example": "Family"
+                  },
+                  "food": {
+                    "example": "food"
+                  },
+                  "sponsor": {
+                    "example": "Sponsor"
+                  },
+                  "theme": {
+                    "example": "theme"
+                  },
+                  "cause": {
+                    "example": "cause"
+                  },
+                  "eventPlanner": {
+                    "example": "name"
+                  }
               }
             }
           }
@@ -189,16 +189,16 @@
               "type": "object",
               "properties": {
                 "address": {
-                  "example": "any"
+                  "example": "address"
                 },
                 "locationName": {
-                  "example": "any"
+                  "example": "location"
                 },
                 "capacity": {
-                  "example": "any"
+                  "example": 100
                 },
                 "indoor": {
-                  "example": "any"
+                  "example": true
                 }
               }
             }
@@ -232,17 +232,17 @@
               "type": "object",
               "properties": {
                 "address": {
-                  "example": "any"
-                },
-                "locationName": {
-                  "example": "any"
-                },
-                "capacity": {
-                  "example": "any"
-                },
-                "indoor": {
-                  "example": "any"
-                }
+                    "example": "address"
+                  },
+                  "locationName": {
+                    "example": "location"
+                  },
+                  "capacity": {
+                    "example": 100
+                  },
+                  "indoor": {
+                    "example": true
+                  }
               }
             }
           }
