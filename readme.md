@@ -1,4 +1,4 @@
-This is going to be a side where you can add venues as a business or location affiliate. Then based off of those venues events can be planned. 
+This is going to be a side where you can add venues as a business or location affiliate. Then based off of those venues events can be planned.
 
 You get to choose what this project is: Event Planner
 Database should store at least two collections: Venue and Events

@@ -1,0 +1,35 @@
+{
+  "Event-1": {
+    "time": "12:30PM",
+    "date": "09/09/22",
+    "venueID": "62896a701617555152a9dc70",
+    "ageGroup": "Family",
+    "food": "BBQ",
+    "sponsor": "Local City",
+    "theme": "Star Wars",
+    "cause": "Police Funding",
+    "eventPlanner": "Chief Danial's"
+  },
+  "Event-2": {
+    "time": "08:30PM",
+    "date": "06/16/22",
+    "venueID": "62896a701617555152a9dc72",
+    "ageGroup": "Couples",
+    "food": "Sushi",
+    "sponsor": "Singles Ward",
+    "theme": "Black Tie",
+    "cause": "Speed Dating",
+    "eventPlanner": "Dr Love"
+  },
+  "Event-3": {
+    "time": "11:30AM",
+    "date": "08/04/22",
+    "venueID": "62896a701617555152a9dc70",
+    "ageGroup": "Kids and Family",
+    "food": "BBQ",
+    "sponsor": "REC Center",
+    "theme": "Swimming",
+    "cause": "Swimming Lessons",
+    "eventPlanner": "Life Guard Association"
+  }
+}

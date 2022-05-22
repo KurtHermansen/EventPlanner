@@ -1,0 +1,26 @@
+{
+  "venue-1": {
+    "address": "123 City Road",
+    "locationName": "City Park",
+    "capacity": 400,
+    "indoor": false
+  },
+  "venue-2": {
+    "address": "8080 Local AVE",
+    "locationName": "City Hall",
+    "capacity": 100,
+    "indoor": true
+  },
+  "venue-3": {
+    "address": "789 South 435 North",
+    "locationName": "Tom's Dinner",
+    "capacity": 40,
+    "indoor": true
+  },
+  "venue-4": {
+    "address": "1151 East 300 West",
+    "locationName": "Western Park",
+    "capacity": 4000,
+    "indoor": false
+  }
+}
