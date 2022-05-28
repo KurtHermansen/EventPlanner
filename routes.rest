@@ -10,7 +10,7 @@ Content-Type: application/json
 {
     "time": "01:00PM",
     "date": "01/01/22",
-    "venueID": "62896a701617555152a9dc72",
+    "venueID": "62896a701617555152a9dc70",
     "ageGroup": "test",
     "food": "test food",
     "sponsor": "test",
@@ -27,4 +27,14 @@ Content-Type: application/json
     "locationName": "City Park",
     "capacity": 400,
     "indoor": false
+}
+###
+POST http://localhost:8080/venues/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "address": "888 Fun Town",
+    "locationName": "",
+    "capacity": 200,
+    "indoor": true
 }
