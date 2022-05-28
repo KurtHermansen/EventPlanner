@@ -17,17 +17,13 @@
       "description": "Operations for Venues"
     }
   ],
-  "schemes": [
-    "https"
-  ],
+  "schemes": ["https"],
   "paths": {
     "/events/": {
       "get": {
         "tags": ["Events"],
         "description": "Gets all the planned events.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -104,32 +100,32 @@
               "type": "object",
               "properties": {
                 "time": {
-                    "example": "10:00PM"
-                  },
-                  "date": {
-                    "example": "01/01/22"
-                  },
-                  "venueID": {
-                    "example": "venueID"
-                  },
-                  "ageGroup": {
-                    "example": "Family"
-                  },
-                  "food": {
-                    "example": "food"
-                  },
-                  "sponsor": {
-                    "example": "Sponsor"
-                  },
-                  "theme": {
-                    "example": "theme"
-                  },
-                  "cause": {
-                    "example": "cause"
-                  },
-                  "eventPlanner": {
-                    "example": "name"
-                  }
+                  "example": "10:00PM"
+                },
+                "date": {
+                  "example": "01/01/22"
+                },
+                "venueID": {
+                  "example": "venueID"
+                },
+                "ageGroup": {
+                  "example": "Family"
+                },
+                "food": {
+                  "example": "food"
+                },
+                "sponsor": {
+                  "example": "Sponsor"
+                },
+                "theme": {
+                  "example": "theme"
+                },
+                "cause": {
+                  "example": "cause"
+                },
+                "eventPlanner": {
+                  "example": "name"
+                }
               }
             }
           }
@@ -168,9 +164,7 @@
       "get": {
         "tags": ["Venues"],
         "description": "Gets all Venues",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -232,17 +226,17 @@
               "type": "object",
               "properties": {
                 "address": {
-                    "example": "address"
-                  },
-                  "locationName": {
-                    "example": "location"
-                  },
-                  "capacity": {
-                    "example": 100
-                  },
-                  "indoor": {
-                    "example": true
-                  }
+                  "example": "address"
+                },
+                "locationName": {
+                  "example": "location"
+                },
+                "capacity": {
+                  "example": 100
+                },
+                "indoor": {
+                  "example": true
+                }
               }
             }
           }

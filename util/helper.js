@@ -1,4 +1,3 @@
- 
 const Validator = require('validatorjs');
 
 const validator = (body, rules, customMessages, callback) => {

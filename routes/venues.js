@@ -9,5 +9,4 @@ router.post('/', validation.venueCheck, venuesController.createVenue);
 router.put('/:id', validation.venueCheck, venuesController.updateVenue);
 router.delete('/:id', venuesController.deleteVenue);
 
-
 module.exports = router;
