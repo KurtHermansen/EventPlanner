@@ -1,0 +1,23 @@
+{
+    "user-1": {
+      "userName": "guest",
+      "password": "greatPassword123",
+      "jobTitle": "Head of Sales",
+      "company": "United",
+      "email": "heahofsales@mail.com"
+    },
+    "user-2": {
+      "userName": "Frank5",
+      "password": "betterPassword09",
+      "jobTitle": "CEO",
+      "company": "AAA",
+      "email": "bossman@mail.com"
+    },
+    "user-3": {
+      "userName": "stanlee2",
+      "password": "iCanRememberThis2",
+      "jobTitle": "COO",
+      "company": "Grant Engineering",
+      "email": "theBrains@mail.com"
+    }
+  }
