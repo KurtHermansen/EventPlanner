@@ -1,98 +1,96 @@
 const db = require('../models')
+const Venue = db.venues;
 const ObjectId = require('mongodb').ObjectId;
 
-const getAll = async (req, res) => {
-  try {
-    const result = await mongodb.getDb().db('event-planner').collection('venues').find();
-    result.toArray().then((lists) => {
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(lists);
-    });
-  } catch (err) {
-    res.status(500).json(response.error || 'Error occurred while gathering information');
-  }
+module.exports.getAll = (req, res) => {
+    try {
+      Venue.find({})
+        .then((data) => {
+          res.status(200).send(data);
+        })
+        .catch((err) => {
+          res.status(500).send({
+            message: err.message || 'Some error occurred while retrieving Venues.'
+          });
+        });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  };
+
+  module.exports.createVenue = (req, res) => {
+    try {
+      if (!req.body.address ||
+          !req.body.locationName ||
+          !req.body.capacity ||
+          !req.body.indoor) {
+        res.status(400).send({ message: 'Content can not be empty!' });
+        return;
+      }
+      const venueww = new Venue(req.body);
+      venue
+        .save()
+        .then((data) => {
+          console.log(data);
+          res.status(201).send(data);
+        })
+        .catch((err) => {
+          res.status(500).send({
+            message: err.message || 'Some error occurred while creating the venue.'
+          });
+        });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  };
+
+
+  module.exports.updateVenue = async (req, res) => {
+    try {
+         if (!ObjectId.isValid(req.params.id)) {
+            res.status(400).json('Must use a valid venue id to find a venue.');
+            return;
+        } else if (!req.body.address ||
+          !req.body.locationName ||
+          !req.body.capacity ||
+          !req.body.indoor) {
+        res.status(400).send({ message: 'Content can not be empty!' });
+        return;
+      }
+      const venueId = new ObjectId(req.params.id);
+      Venue.findOne({ _id: venueId }, function (err, venue) {
+          venue.address = req.params.address;
+          venue.locationName = req.params.locationName;
+          venue.capacity = req.params.capacity;
+          venue.indoor = req.params.indoor;
+          venue.save(function (err) {
+              if (err)  {
+                  res.status(500).json(err || 'Some Error occurred while updating the Venue');
+              } else {
+                  res.status(204).send();
+              }
+          });
+      });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+  };
+
+  module.exports.deleteVenue = async (req, res) => {
+    try {
+         if (!ObjectId.isValid(req.params.id)) {
+            res.status(400).json('Must use a valid venue id to find a venue.');
+            return;
+        }
+        const venueId = new ObjectId(req.params.id);
+        Venue.deleteOne({ _id: venueId }, function (err, result) {
+            if (err) {
+                res.status(500).json(err || 'Some error occurred while deleting the Venue');
+            } else {
+                res.status(204).send(result);
+            }
+        });
+    } catch (err) {
+        res.status(500).json(err || 'Some error occurred while deleting the Venue.');
+    }
 };
-
-const createVenue = async (req, res) => {
-  try {
-    const address = req.body.address;
-    const location = req.body.locationName;
-    const capacity = req.body.capacity;
-    const indoor = req.body.indoor;
-    if (!address || !location || !capacity || !indoor) {
-      res.status(400).send({ message: 'Content can not be empty!' });
-      return;
-    }
-    const venue = {
-      address: address,
-      locationName: location,
-      capacity: capacity,
-      indoor: indoor
-    };
-    const response = await mongodb
-      .getDb()
-      .db('event-planner')
-      .collection('venues')
-      .insertOne(venue);
-    if (response.acknowledged) {
-      res.status(202).json(response);
-    }
-  } catch (err) {
-    res.status(500).json(response.error || 'Error occurred while creating Venue');
-  }
-};
-
-const updateVenue = async (req, res) => {
-  try {
-    if (!ObjectId.isValid(req.params.id)) {
-      res.status(400).json('Must use a valid venue id to find a venue.');
-    } else if (
-      !req.body.address ||
-      !req.body.locationName ||
-      !req.body.capacity ||
-      !req.body.indoor
-    ) {
-      res.status(400).send({ message: 'Content can not be empty!' });
-      return;
-    }
-    const venueId = new ObjectId(req.params.id);
-    const updatedVenue = {
-      address: req.body.address,
-      locationName: req.body.locationName,
-      capacity: req.body.capacity,
-      indoor: req.body.indoor
-    };
-
-    const response = await mongodb
-      .getDb()
-      .db('event-planner')
-      .collection('venues')
-      .replaceOne({ _id: venueId }, updatedVenue);
-    if (response.acknowledged) {
-      res.status(202).json(response);
-    }
-  } catch (err) {
-    res.status(500).json(response.error || 'Error occurred while creating event');
-  }
-};
-
-const deleteVenue = async (req, res) => {
-  try {
-    if (!ObjectId.isValid(req.params.id)) {
-      res.status(400).json('Must use a valid event id to delete a event.');
-    }
-    const venueId = new ObjectId(req.params.id);
-    const response = await mongodb
-      .getDb()
-      .db('event-planner')
-      .collection('venues')
-      .deleteOne({ _id: venueId });
-    if (response.acknowledged) {
-      res.status(202).json(response);
-    }
-  } catch (err) {
-    res.status(500).json(response.error || 'Error occurred while deleting Venue');
-  }
-};
-
-module.exports = { getAll, createVenue, updateVenue, deleteVenue };

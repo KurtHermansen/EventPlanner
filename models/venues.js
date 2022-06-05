@@ -1,5 +1,3 @@
-const { number, boolean } = require("joi");
-
 module.exports = (mongoose) => {
     const Venue = mongoose.model(
       'venues',

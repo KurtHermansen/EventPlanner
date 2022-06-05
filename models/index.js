@@ -7,6 +7,6 @@ const db = {};
 db.mongoose = mongoose;
 db.url = dbConfig.url;
 db.events = require('./events.js')(mongoose);
-db.venues = require('./venues.js')(mongoose);
+db.venues = require('./venues')(mongoose);
 
 module.exports = db;
