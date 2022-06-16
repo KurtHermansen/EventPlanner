@@ -26,6 +26,8 @@ app
   })
   .use('/', require('./routes'));
 
+app.use('/auth', require('./routes/auth'));
+
 
 const db = require('./models');
 db.mongoose
@@ -87,12 +89,13 @@ app.use(
 //   )
 //   app.set('view engine', '.hbs')
   
-  //Sessions
-  app.use(
+// Sessions
+app.use(
     session({
       secret: 'keyboard cat',
       resave: false,
-      saveUninitialized: false
+      saveUninitialized: false,
+      store: MongoStore.create({mongoUrl: process.env.MONGODB_URI,}),
     })
   )
   
