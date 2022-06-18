@@ -6,7 +6,8 @@ mongoose.Promise = global.Promise;
 const db = {};
 db.mongoose = mongoose;
 db.url = dbConfig.url;
-db.events = require('./events.js')(mongoose);
+db.events = require('./events')(mongoose);
 db.venues = require('./venues')(mongoose);
+db.users = require('./User')(mongoose);
 
 module.exports = db;

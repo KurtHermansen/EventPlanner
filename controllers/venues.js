@@ -27,7 +27,7 @@ module.exports.getAll = (req, res) => {
         res.status(400).send({ message: 'Content can not be empty!' });
         return;
       }
-      const venueww = new Venue(req.body);
+      const venue = new Venue(req.body);
       venue
         .save()
         .then((data) => {

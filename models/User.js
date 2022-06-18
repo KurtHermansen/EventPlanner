@@ -1,29 +1,44 @@
+const { required } = require('joi')
 const mongoose = require('mongoose')
 
 const UserSchema = new mongoose.Schema({
-    googleId: {
+    given_name: {
         type: String,
         required: true
     },
-    displayName: {
+    family_name: {
         type: String,
         required: true
     },
-    firstName: {
+    nickname: {
         type: String,
         required: true
     },
-    lastName: {
-        type: String,
-        required: true
-    },
-    image: {
+    name: {
         type: String
     },
-    createdAt: {
-        type: Date,
-        default: Date.now
+    picture: {
+        type: String
+    },
+    locale: {
+        type: String
+    },
+    updated_at: {
+        type: String
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    email_verified: {
+        type: Boolean
+    },
+    sub: {
+        type: String,
+        required: true
     }
 })
+
+
 
 module.exports = mongoose.model('User', UserSchema)

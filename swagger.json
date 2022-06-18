@@ -5,9 +5,26 @@
     "description": "You can see how to add venues and events for your location city.",
     "version": "1.0.0"
   },
+  "securityDefinitions": {
+    "google_oauth": {
+        "type": "oauth2",
+        "description": "Google OAuth",
+        "authorizationUrl": "https://accounts.google.com/o/oauth2/v2/auth",
+        "token Url": "https://www.googleapis.com/oauth2/v4/token",
+        "x-tokenName": "id_token",
+        "flow": "implicit",
+        "scopes": {
+            "read:players": "read player data"
+        }
+    }
+},
   "host": "event-planner-cse341.herokuapp.com",
   "basePath": "/",
   "tags": [
+    {
+        "name": "Users",
+        "description": "Operations for Users"
+      },
     {
       "name": "Events",
       "description": "Operations for Events"
@@ -19,6 +36,51 @@
   ],
   "schemes": ["https"],
   "paths": {
+    "/users/": {
+        "get": {
+            "tags": ["Users"],
+            "description": "Returns a Users basic google information.",
+            "produces": ["application/json"],
+            "responses": {
+                "200": {
+                    "description": "A player resource.",
+                    "schema": {
+                        "$ref": "#/definitions/Player"
+                    }
+                }
+            },
+            "security": {
+                "oauth": ["read:players"]
+            }
+        },
+        "parameters": [{
+            "name": "id",
+            "in": "path",
+            "description": "Identifier of player to retreive",
+            "required": true,
+            "type": "string"
+        }]
+    },
+"definitions": {
+    "Player": {
+        "type": "object",
+        "properties": {
+            "playerId": {
+                "type": "string"
+            },
+            "alias": {
+                "type": "string"
+            },
+            "displayName": {
+                "type": "string"
+            },
+            "profilePhotoUrl": {
+                "type": "string"
+            }
+        },
+        "required": ["playerId", "alias"]
+    }
+},
     "/events/": {
       "get": {
         "tags": ["Events"],
