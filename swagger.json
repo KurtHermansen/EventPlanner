@@ -5,9 +5,24 @@
     "description": "You can see how to add venues and events for your location city.",
     "version": "1.0.0"
   },
+  "securityDefinitions": {
+    "google_oauth": {
+        "type": "oauth2",
+        "description": "Google OAuth",
+        "authorizationUrl": "https://accounts.google.com/o/oauth2/v2/auth",
+        "flow": "implicit",
+        "scopes": {
+            "user:read": "read user data"
+        }
+    }
+},
   "host": "event-planner-cse341.herokuapp.com",
   "basePath": "/",
   "tags": [
+    {
+        "name": "User",
+        "description": "Operations for User"   
+    },
     {
       "name": "Events",
       "description": "Operations for Events"
@@ -19,6 +34,42 @@
   ],
   "schemes": ["https"],
   "paths": {
+    "/user/profile":{
+        "get": {
+            "tags": ["User"],
+            "description": "Gets the current uses information from Google",
+            "produces": ["application/json"],
+            "parameters":[{
+                "name":"body",
+                "in":"body",
+                "schema":{
+                    "type":"object",
+                    "properties":{
+                        "googleId": {
+                            "example": "113427959355924570000"
+                        },
+                        "displayName": {
+                            "example": "John Dow"
+                        },
+                        "firstName": {
+                            "example": "John"
+                        },
+                        "lastName": {
+                            "example": "Dow"
+                        },
+                        "image": {
+                            "example": "https://lh3.googleusercontent.com/a/AATXAJwG3ss_kJTdju8PTMhugOZ2t9fNeVgAOH6dIuGQ=s96-c"
+                        },
+                        "createdAt": {
+                            "example": "2022-06-14T20:24:34.594+00:00"
+                        }
+                    }
+                }
+        }]
+
+        }
+
+    },
     "/events/": {
       "get": {
         "tags": ["Events"],

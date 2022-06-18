@@ -1,5 +1,6 @@
 const path = require('path')
 const express = require('express');
+const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv')
 const morgan = require('morgan')
@@ -18,15 +19,7 @@ dotenv.config({ path: './config/config.env' })
 //Passport config
 require('./config/passport')(passport)
 
-app
-  .use(bodyParser.json())
-  .use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    next();
-  })
-  .use('/', require('./routes'));
 
-app.use('/auth', require('./routes/auth'));
 
 
 const db = require('./models');
@@ -111,3 +104,11 @@ app.use(
   
   // Static folder
   app.use(express.static(path.join(__dirname, 'public')))
+
+  app
+  .use(bodyParser.json())
+  .use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+  })
+  .use('/', require('./routes'));
