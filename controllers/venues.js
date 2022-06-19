@@ -27,7 +27,7 @@ module.exports.getAll = (req, res) => {
         res.status(400).send({ message: 'Content can not be empty!' });
         return;
       }
-      const venueww = new Venue(req.body);
+      const venue = new Venue(req.body);
       venue
         .save()
         .then((data) => {
@@ -59,15 +59,15 @@ module.exports.getAll = (req, res) => {
       }
       const venueId = new ObjectId(req.params.id);
       Venue.findOne({ _id: venueId }, function (err, venue) {
-          venue.address = req.params.address;
-          venue.locationName = req.params.locationName;
-          venue.capacity = req.params.capacity;
-          venue.indoor = req.params.indoor;
+          venue.address = req.body.address;
+          venue.locationName = req.body.locationName;
+          venue.capacity = req.body.capacity;
+          venue.indoor = req.body.indoor;
           venue.save(function (err) {
               if (err)  {
                   res.status(500).json(err || 'Some Error occurred while updating the Venue');
               } else {
-                  res.status(204).send();
+                  res.status(204).send(venue);
               }
           });
       });

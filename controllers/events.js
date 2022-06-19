@@ -70,20 +70,20 @@ module.exports.getAll = (req, res) => {
       }
       const eventId = new ObjectId(req.params.id);
       Event.findOne({ _id: eventId }, function (err, event) {
-          event.time = req.params.time;
-          event.date = req.params.date;
-          event.venueID = req.params.venueID;
-          event.ageGroup = req.params.ageGroup;
-          event.food = req.params.food;
-          event.sponsor = req.params.sponsor;
-          event.theme = req.params.theme;
-          event.cause = req.params.cause;
-          event.eventPlanner = req.params.eventPlanner;
+          event.time = req.body.time;
+          event.date = req.body.date;
+          event.venueID = req.body.venueID;
+          event.ageGroup = req.body.ageGroup;
+          event.food = req.body.food;
+          event.sponsor = req.body.sponsor;
+          event.theme = req.body.theme;
+          event.cause = req.body.cause;
+          event.eventPlanner = req.body.eventPlanner;
           event.save(function (err) {
               if (err)  {
                   res.status(500).json(err || 'Some Error occurred while updating the Venue');
               } else {
-                  res.status(204).send();
+                  res.status(204).send(event);
               }
           });
       });

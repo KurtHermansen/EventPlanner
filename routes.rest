@@ -19,7 +19,38 @@ Content-Type: application/json
     "eventPlanner": "Dr test"
 }
 ###
-PUT http://localhost:8080/venues/629d25e00aaa1912320c6511 HTTP/1.1
+PUT http://localhost:8080/events/62ae9d82b7babd07e566caa9 HTTP/1.1
+Content-Type: application/json
+
+{
+    "time": "10:30AM",
+    "date": "09/11/22",
+    "venueID": "62ae98c4737f9cae42a8a823",
+    "ageGroup": "All Ages",
+    "food": "Mexican",
+    "sponsor": "Medical Center",
+    "theme": "Disco",
+    "cause": "Health for Life",
+    "eventPlanner": "Chief of Medicine"
+}
+
+###
+POST http://localhost:8080/events/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "time": "12:30AM",
+    "date": "08/04/22",
+    "venueID": "62ae98c4737f9cae42a8a823",
+    "ageGroup": "Adults",
+    "food": "BBQ",
+    "sponsor": "Golf Classic",
+    "theme": "Golf",
+    "cause": "Finding Jobs",
+    "eventPlanner": "Golf Pro"
+}
+###
+PUT http://localhost:8080/venues/62ae98c4737f9cae42a8a823 HTTP/1.1
 Content-Type: application/json
 
 {
