@@ -151,31 +151,31 @@
               "type": "object",
               "properties": {
                 "time": {
-                  "example": "10:00PM"
+                  "example": "10:30AM"
                 },
                 "date": {
-                  "example": "01/01/22"
+                  "example": "09/11/22"
                 },
                 "venueID": {
-                  "example": "venueID"
+                  "example": "62ae98c4737f9cae42a8a823"
                 },
                 "ageGroup": {
-                  "example": "Family"
+                  "example": "All Ages"
                 },
                 "food": {
-                  "example": "food"
+                  "example": "Mexican"
                 },
                 "sponsor": {
-                  "example": "Sponsor"
+                  "example": "Medical Center"
                 },
                 "theme": {
-                  "example": "theme"
+                  "example": "Disco"
                 },
                 "cause": {
-                  "example": "cause"
+                  "example": "Health for Life"
                 },
                 "eventPlanner": {
-                  "example": "name"
+                  "example": "Chief of Medicine"
                 }
               }
             }
@@ -277,13 +277,13 @@
               "type": "object",
               "properties": {
                 "address": {
-                  "example": "address"
+                  "example": "888 Fun updated Town"
                 },
                 "locationName": {
-                  "example": "location"
+                  "example": "Happy updated  day"
                 },
                 "capacity": {
-                  "example": 100
+                  "example": 200
                 },
                 "indoor": {
                   "example": true
