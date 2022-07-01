@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Event Planner API",
+    "title": "Health App API",
     "description": "You can see how to add venues and events for your location city.",
     "version": "1.0.0"
   },
